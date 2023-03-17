@@ -30,7 +30,6 @@ To execute the script, ensure the following software is installed:
 
 Install Beautiful Soup using pip:
 
-```bash
 pip install beautifulsoup4
 
 ## Usage
@@ -39,7 +38,6 @@ pip install beautifulsoup4
 2. Open a terminal or command prompt window and navigate to the directory containing the script.
 3. Run the following command to generate the HTML file:
 
-```bash
 python security.py
 
 The script creates an HTML file named news.html in the same directory.
