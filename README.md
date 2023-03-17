@@ -4,7 +4,6 @@ A Python script that scrapes the latest news from [security.nl](https://www.secu
 
 The generated HTML page showcases the following details for each news item:
 
-- Date and time
 - Title
 - Link to the article
 
