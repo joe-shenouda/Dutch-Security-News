@@ -29,7 +29,7 @@ h2 {{
     margin-bottom: 20px;
     background-color: #f8f8f8;
 }}
-.date {{
+.timestamp {{
     font-weight: bold;
     margin: 0;
     color: #3d3d3d;
@@ -54,7 +54,7 @@ h2 {{
 </style>
 </head>
 <body>
-<h2>Security.nl News for {date}</h2>
+<h2>Security.nl News</h2>
 """
 
 for item in news.find_all('div', class_='posting_list_item'):
@@ -63,7 +63,7 @@ for item in news.find_all('div', class_='posting_list_item'):
     link = f"{url}{item.find('div', class_='title').find('a')['href']}"
     output += f"""
     <div class='news-item'>
-        <p class='date'>{date} - {timestamp}</p>
+        <p class='timestamp'>{timestamp}</p>
         <p class='title'>{title}</p>
         <p class='link'>Link: <a href='{link}'>{link}</a></p>
     </div>
