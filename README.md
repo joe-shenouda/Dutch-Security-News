@@ -8,7 +8,6 @@ The generated HTML page showcases the following details for each news item:
 - Title
 - Link to the article
 
-The script automatically extracts the date of the news items from the website heading and incorporates it into the HTML output. It also features basic CSS styling to enhance the visual appeal of the HTML output.
 
 ## Table of Contents
 
