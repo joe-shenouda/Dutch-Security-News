@@ -5,7 +5,7 @@ This Python script scrapes the latest news from [security.nl](https://www.securi
 The generated HTML page includes the following information for each news item:
 
 - Title
-- Summary
+- Summary (fetched by extracting the first paragraph of the article)
 - Link to the article
 
 The script also includes some basic CSS styling to make the HTML output more visually appealing.
@@ -18,6 +18,7 @@ To run the script, you need to have the following software installed:
 - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
 You can install Beautiful Soup using pip:
+
 
 pip install beautifulsoup4
 
