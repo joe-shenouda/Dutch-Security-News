@@ -29,11 +29,6 @@ h2 {{
     margin-bottom: 20px;
     background-color: #f8f8f8;
 }}
-.timestamp {{
-    font-weight: bold;
-    margin: 0;
-    color: #3d3d3d;
-}}
 .title {{
     margin: 10px 0;
     font-size: 18px;
@@ -58,12 +53,10 @@ h2 {{
 """
 
 for item in news.find_all('div', class_='posting_list_item'):
-    timestamp = item.find('div', class_='timestamp').text.strip()
     title = item.find('div', class_='title').find('a').text.strip()
     link = f"{url}{item.find('div', class_='title').find('a')['href']}"
     output += f"""
     <div class='news-item'>
-        <p class='timestamp'>{timestamp}</p>
         <p class='title'>{title}</p>
         <p class='link'>Link: <a href='{link}'>{link}</a></p>
     </div>
