@@ -10,9 +10,6 @@ soup = BeautifulSoup(response.text, 'html.parser')
 news = soup.find('div', class_='posting_list with_row_background frontpage')
 output = ''
 
-today = datetime.today().strftime('%A %d %B %Y')
-date = soup.find('div', class_='posting_list_heading').text.strip()
-
 output += f"""
 <html>
 <head>
@@ -34,8 +31,12 @@ h2 {{
     font-size: 18px;
     color: #3d3d3d;
 }}
+.summary {{
+    font-size: 16px;
+    color: #3d3d3d;
+}}
 .link {{
-    margin: 0;
+    margin: 10px 0;
     font-size: 16px;
     color: #3d3d3d;
 }}
@@ -55,9 +56,18 @@ h2 {{
 for item in news.find_all('div', class_='posting_list_item'):
     title = item.find('div', class_='title').find('a').text.strip()
     link = f"{url}{item.find('div', class_='title').find('a')['href']}"
+
+    # Fetch the article and extract the summary
+    article_response = requests.get(link)
+    article_soup = BeautifulSoup(article_response.text, 'html.parser')
+
+    # Extract the first paragraph as a summary
+    summary = article_soup.find('div', class_='posting_content').find('p').text.strip()
+
     output += f"""
     <div class='news-item'>
         <p class='title'>{title}</p>
+        <p class='summary'>{summary}</p>
         <p class='link'>Link: <a href='{link}'>{link}</a></p>
     </div>
     """
