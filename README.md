@@ -10,6 +10,8 @@ The generated HTML page includes the following information for each news item:
 
 The script also includes some basic CSS styling to make the HTML output more visually appealing.
 
+Created by Joe Shenouda (www.shenouda.nl)
+
 ## Requirements
 
 To run the script, you need to have the following software installed:
